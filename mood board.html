@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MOOD BOARD</title>
+	<link rel="stylesheet" type="text/css" href="./mood%20board.css" />
+     <link rel="stylesheet" type="text/css" href="./lightbox.min.css">
+      <script type="text/javascript" src="js/lightbox-plus-jquery.min.js"></script>
+  </head>
+  <body>
+      <h1>Image Gallery Design</h1>
+      
+      <div class="row">
+          <div class="images-gallery">
+    <img src="image/bathroom.jpg" onclick="openModal();currentSlide(1)" class="img0">
+
+    <img src="image/bedroom.jpg" onclick="openModal();currentSlide(2)" class="img1">
+ 
+    <img src="image/workplace.jpg" onclick="openModal();currentSlide(3)" class="img2">
+ 
+  
+    <img src="image/kitchen.jpg" onclick="openModal();currentSlide(4)" class="img3">
+  
+    <img src="image/office.jpg" onclick="openModal();currentSlide(5)" class="img4">
+  
+    <img src="image/telescope.jpg" onclick="openModal();currentSlide(6)" class="img5">
+  
+    <img src="image/home.jpg" onclick="openModal();currentSlide(7)" class="img6">
+  
+    <img src="image/chair.jpg" onclick="openModal();currentSlide(8)" class="img8">
+  
+    <img src="image/dining.jpg" onclick="openModal();currentSlide(9)" class="img9">
+  </div>
+          
+          
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 9</div>
+      <img src="image/bathroom.jpg" style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 9</div>
+      <img src="image/bedroom.jpg" style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 9</div>
+      <img src="image/workplace.jpg" style="width:60%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 9</div>
+      <img src="image/kitchen.jpg" style="width:60%">
+    </div>
+
+      <div class="mySlides">
+      <div class="numbertext">5 / 9</div>
+      <img src="image/office.jpg" style="width:60%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">6 / 9</div>
+      <img src="image/telescope.jpg" style="width:60%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">7 / 9</div>
+      <img src="image/home.jpg" style="width:60%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">8 / 9</div>
+      <img src="image/chair.jpg" style="width:60%">
+    </div>
+      
+      <div class="mySlides">
+      <div class="numbertext">9 / 9</div>
+      <img src="image/dining.jpg" style="width:60%">
+    </div>
+      
+    
+      
+      
+      
+      
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="image/bathroom.jpg" onclick="currentSlide(1)" alt="bathroom">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="image/bedroom.jpg" onclick="currentSlide(2)" alt="bedroom">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="image/workplace.jpg" onclick="currentSlide(3)" alt="workplace">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="image/kitchen.jpg" onclick="currentSlide(4)" alt="kitchen">
+    </div>
+      
+      <div class="column">
+      <img class="demo" src="image/office.jpg" onclick="currentSlide(5)" alt="office">
+    </div>
+      
+      <div class="column">
+      <img class="demo" src="image/telescope.jpg" onclick="currentSlide(6)" alt="telescope">
+    </div>
+      
+      <div class="column">
+      <img class="demo" src="image/home.jpg" onclick="currentSlide(7)" alt="home">
+    </div>
+      
+      <div class="column">
+      <img class="demo" src="image/chair.jpg" onclick="currentSlide(8)" alt="chair">
+    </div>
+      
+      <div class="column">
+      <img class="demo" src="image/dining.jpg" onclick="currentSlide(9)" alt="dining">
+    </div>
+      
+  </div>
+</div>
+      <script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+      
+      </body>
+</html>
